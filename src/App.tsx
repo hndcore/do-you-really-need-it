@@ -6,7 +6,7 @@ import HistoryPage from "./pages/history/HistoryPage";
 
 function App() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#f2f5f5" }}>
+    <div className="min-h-screen bg-neutral">
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/calculator" replace />} />
