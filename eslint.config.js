@@ -17,6 +17,8 @@ export default defineConfig([
     ],
     rules: {
       'react-refresh/only-export-components': 'off',
+      'quotes': ['error', 'double'],
+      'semi': ['error', 'always'],
     },
     languageOptions: {
       ecmaVersion: 2020,
