@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Do you really need it?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React app that translates a purchase price into working time. The goal is to make spending decisions feel more concrete by showing the hours, days, or weeks of life traded for a purchase.
 
-Currently, two official plugins are available:
+All calculations happen in the browser. The app does not track, store, or send user data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Purchase-to-time calculator
+- Hourly, daily, monthly, and yearly income modes
+- Dynamic result messages and reflection prompts
+- Local and private calculation
+- Pages for history and reflections
+- Component and business-logic tests with Vitest
+- Responsive and accessible UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Vitest
+- React Testing Library
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/components   UI components
+src/contexts     Calculator state provider
+src/utils        Business logic and reusable helpers
+src/pages        Route pages
+src/test         Test setup
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm run dev
+npm run build
+npm run test -- --run
+npm run test:coverage -- --maxWorkers=1
+npm run lint
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Testing
+
+The test suite covers components and extracted business logic.
+
+```bash
+npm run test -- --run
+```
+
+Coverage:
+
+```bash
+npm run test:coverage -- --maxWorkers=1
+```
+
+`--maxWorkers=1` avoids occasional temporary coverage directory races on Windows.
+
+## Build
+
+```bash
+npm run build
 ```
