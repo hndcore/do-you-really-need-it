@@ -1,8 +1,9 @@
 import { useId, type InputHTMLAttributes, type ReactNode } from "react";
 
-interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "prefix"> {
+interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "prefix" | "type"> {
   label?: string;
   error?: string;
+  type?: "text" | "number";
   variant?: "white" | "gray";
   prefix?: ReactNode;
 }
@@ -12,6 +13,7 @@ const TextInput = ({
   error,
   variant = "white",
   prefix,
+  type = "text",
   className = "",
   id,
   "aria-describedby": ariaDescribedBy,
@@ -45,7 +47,7 @@ const TextInput = ({
         )}
         <input
           id={inputId}
-          type="text"
+          type={type}
           className={`w-full rounded-[2px] px-3 py-3.5 text-[17px] font-normal leading-none outline-none transition-colors focus:border-flame ${variantStyles[variant]} ${prefix ? "pl-8" : ""} ${error ? "border-flame" : ""} ${className}`}
           aria-describedby={describedBy}
           aria-invalid={error ? true : undefined}

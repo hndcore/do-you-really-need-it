@@ -21,6 +21,18 @@ describe("TextInput", () => {
     expect(handleChange).toHaveBeenCalled();
   });
 
+  it("uses text inputs by default and supports number inputs", () => {
+    render(
+      <>
+        <TextInput label="Name" />
+        <TextInput label="Amount" type="number" />
+      </>,
+    );
+
+    expect(screen.getByLabelText("Name")).toHaveAttribute("type", "text");
+    expect(screen.getByLabelText("Amount")).toHaveAttribute("type", "number");
+  });
+
   it("shows prefix and validation feedback when provided", () => {
     render(
       <TextInput

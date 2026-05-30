@@ -58,8 +58,8 @@ describe("CalculatorPageContainer", () => {
     await user.click(screen.getByRole("button", { name: "Calculate Effort" }));
 
     expect(await screen.findByText("12 hours")).toBeInTheDocument();
-    expect(screen.getByText("1.5")).toBeInTheDocument();
-    expect(screen.getByText("0.3")).toBeInTheDocument();
+    expect(screen.getByText("1.50")).toBeInTheDocument();
+    expect(screen.getByText("0.30")).toBeInTheDocument();
     expect(screen.getByText("Medium")).toBeInTheDocument();
   });
 
@@ -79,8 +79,8 @@ describe("CalculatorPageContainer", () => {
 
     await user.click(screen.getByRole("button", { name: "Clear" }));
 
-    expect(screen.getByLabelText("Work hours / day")).toHaveValue("8");
-    expect(screen.getByLabelText("Your take-home pay (per day, net)")).toHaveValue("");
+    expect(screen.getByLabelText("Work hours / day")).toHaveValue(8);
+    expect(screen.getByLabelText("Your take-home pay (per day, net)")).toHaveValue(null);
     expect(screen.queryByText("16 hours")).not.toBeInTheDocument();
   });
 

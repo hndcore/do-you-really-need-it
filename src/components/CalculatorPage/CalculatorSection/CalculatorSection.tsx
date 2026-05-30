@@ -66,6 +66,7 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             id="purchase-price"
             aria-labelledby="purchase-price-label"
             variant="white"
+            type="number"
             prefix="€"
             placeholder="0.00"
             value={price}

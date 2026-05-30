@@ -65,9 +65,9 @@ describe("CalculatorSection", () => {
     await user.type(screen.getByLabelText("Your take-home pay (per hour, net)"), "20");
     await user.click(screen.getByRole("button", { name: "Monthly" }));
 
-    expect(screen.getByLabelText("Work hours / day")).toHaveValue("8");
-    expect(screen.getByLabelText("Working days / month")).toHaveValue("22");
-    expect(screen.getByLabelText("Your take-home pay (per month, net)")).toHaveValue("");
+    expect(screen.getByLabelText("Work hours / day")).toHaveValue(8);
+    expect(screen.getByLabelText("Working days / month")).toHaveValue(22);
+    expect(screen.getByLabelText("Your take-home pay (per month, net)")).toHaveValue(null);
   });
 
   it("clears the price error when the user edits the cost", async () => {

@@ -46,9 +46,9 @@ describe("ResultsSection", () => {
     expect(await screen.findByText(/this costs you/i)).toBeInTheDocument();
     expect(screen.getByText("12 hours")).toBeInTheDocument();
     expect(screen.getByText("Days of labor")).toBeInTheDocument();
-    expect(screen.getByText("1.5")).toBeInTheDocument();
+    expect(screen.getByText("1.50")).toBeInTheDocument();
     expect(screen.getByText("Weeks of effort")).toBeInTheDocument();
-    expect(screen.getByText("0.3")).toBeInTheDocument();
+    expect(screen.getByText("0.30")).toBeInTheDocument();
     expect(screen.getByText("Affordability")).toBeInTheDocument();
     expect(screen.getByText("Medium")).toBeInTheDocument();
     expect(screen.getByText("The Rule of 30")).toBeInTheDocument();

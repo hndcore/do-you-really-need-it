@@ -23,6 +23,7 @@ const IncomeBasisMetadata: React.FC = () => {
         <TextInput
           prefix="€"
           variant="gray"
+          type="number"
           placeholder="0.00"
           label={t("calculator.form.fields.takeHomeHourly")}
           value={takeHomePay}
@@ -45,6 +46,7 @@ const IncomeBasisMetadata: React.FC = () => {
       <div className="mt-[clamp(1.2rem,2.5vh,2rem)] grid grid-cols-1 gap-[clamp(1.2rem,2.5vh,2rem)] sm:grid-cols-2">
         <TextInput
           variant="gray"
+          type="number"
           placeholder="8"
           label={t("calculator.form.fields.workHoursDay")}
           value={workHoursPerDay}
@@ -62,6 +64,7 @@ const IncomeBasisMetadata: React.FC = () => {
         <TextInput
           prefix="€"
           variant="gray"
+          type="number"
           placeholder="0.00"
           label={t("calculator.form.fields.takeHomeDaily")}
           value={takeHomePay}
@@ -85,6 +88,7 @@ const IncomeBasisMetadata: React.FC = () => {
         <div className="grid grid-cols-1 gap-[clamp(1.2rem,2.5vh,2rem)] sm:grid-cols-2">
           <TextInput
             variant="gray"
+            type="number"
             placeholder="8"
             label={t("calculator.form.fields.workHoursDay")}
             value={workHoursPerDay}
@@ -101,6 +105,7 @@ const IncomeBasisMetadata: React.FC = () => {
 
           <TextInput
             variant="gray"
+            type="number"
             placeholder="22"
             label={t("calculator.form.fields.workingDaysMonth")}
             value={workingDaysPerMonth}
@@ -119,6 +124,7 @@ const IncomeBasisMetadata: React.FC = () => {
         <TextInput
           prefix="€"
           variant="gray"
+          type="number"
           placeholder="0.00"
           label={t("calculator.form.fields.takeHomePeriod", {
             period: t(
