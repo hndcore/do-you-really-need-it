@@ -33,11 +33,11 @@ describe("TextInput", () => {
     expect(screen.getByLabelText("Amount")).toHaveAttribute("type", "number");
   });
 
-  it("shows prefix and validation feedback when provided", () => {
+  it("shows suffix and validation feedback when provided", () => {
     render(
       <TextInput
         label="Price"
-        prefix="€"
+        suffix="€"
         error="Please enter a valid price"
       />,
     );

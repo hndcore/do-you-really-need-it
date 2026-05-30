@@ -21,7 +21,7 @@ const IncomeBasisMetadata: React.FC = () => {
     return (
       <div className="mt-[clamp(1.2rem,2.5vh,2rem)] grid grid-cols-1 gap-[clamp(1.2rem,2.5vh,2rem)]">
         <TextInput
-          prefix="€"
+          suffix="€"
           variant="gray"
           type="number"
           placeholder="0.00"
@@ -62,7 +62,7 @@ const IncomeBasisMetadata: React.FC = () => {
         />
 
         <TextInput
-          prefix="€"
+          suffix="€"
           variant="gray"
           type="number"
           placeholder="0.00"
@@ -122,7 +122,7 @@ const IncomeBasisMetadata: React.FC = () => {
         </div>
 
         <TextInput
-          prefix="€"
+          suffix="€"
           variant="gray"
           type="number"
           placeholder="0.00"

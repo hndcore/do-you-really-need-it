@@ -5,14 +5,14 @@ interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "pr
   error?: string;
   type?: "text" | "number";
   variant?: "white" | "gray";
-  prefix?: ReactNode;
+  suffix?: ReactNode;
 }
 
 const TextInput = ({
   label,
   error,
   variant = "white",
-  prefix,
+  suffix,
   type = "text",
   className = "",
   id,
@@ -40,15 +40,15 @@ const TextInput = ({
         </label>
       )}
       <div className="relative flex items-center">
-        {prefix && (
-          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 font-serif text-base italic text-sand">
-            {prefix}
+        {suffix && (
+          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 font-serif text-3xl italic text-sand">
+            {suffix}
           </span>
         )}
         <input
           id={inputId}
           type={type}
-          className={`w-full rounded-[2px] px-3 py-3.5 text-[17px] font-normal leading-none outline-none transition-colors focus:border-flame ${variantStyles[variant]} ${prefix ? "pl-8" : ""} ${error ? "border-flame" : ""} ${className}`}
+          className={`w-full rounded-[2px] px-3 py-3.5 text-[17px] font-normal leading-none outline-none transition-colors focus:border-flame ${variantStyles[variant]} ${suffix ? "pr-8" : ""} ${error ? "border-flame" : ""} ${className}`}
           aria-describedby={describedBy}
           aria-invalid={error ? true : undefined}
           {...props}
