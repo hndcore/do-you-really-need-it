@@ -38,7 +38,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
     >
       <div className="mx-auto max-w-6xl">
         <div className="border-t border-mist pt-8">
-          <p className="mb-4 text-xs uppercase tracking-[0.14em] text-earth">
+          <p className="mb-4 text-xs uppercase tracking-[0.14em] text-ink">
             Conscious evaluation
           </p>
           <h2
@@ -49,7 +49,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
             <em className="text-rust">{Math.round(hoursValue)} hours</em> of
             your life.
           </h2>
-          <p className="mt-5 max-w-2xl text-lg font-light leading-[1.65] text-clay">
+          <p className="mt-5 max-w-2xl text-lg font-light leading-[1.65] text-ink">
             {resultMessage}
           </p>
         </div>
@@ -64,7 +64,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
             </p>
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
-            <p className="text-xs uppercase tracking-[0.14em] text-earth">
+            <p className="text-xs uppercase tracking-[0.14em] text-ink">
               Weeks of effort
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
@@ -72,7 +72,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
             </p>
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
-            <p className="text-xs uppercase tracking-[0.14em] text-earth">
+            <p className="text-xs uppercase tracking-[0.14em] text-ink">
               Affordability
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">

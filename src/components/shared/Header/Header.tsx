@@ -48,8 +48,8 @@ const Header = () => {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? "border-b border-rust pb-0.5 text-base tracking-[0.04em] text-ink"
-                  : "text-base tracking-[0.04em] text-earth transition-colors hover:text-ink"
+                  ? "border-b font-bold border-rust pb-0.5 text-base tracking-[0.04em] text-night"
+                  : "text-base tracking-[0.04em] text-ink transition-colors hover:text-night"
               }
             >
               {label}
@@ -59,7 +59,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center">
           <button
-            className="cursor-pointer text-right text-sm uppercase tracking-[0.08em] text-earth transition-colors hover:text-rust"
+            className="cursor-pointer text-right text-sm uppercase tracking-[0.08em] text-ink transition-colors hover:text-rust"
             onClick={() => window.open("https://aedem.org/", "_blank")}
             type="button"
           >
@@ -68,7 +68,7 @@ const Header = () => {
         </div>
 
         <button
-          className="md:hidden flex h-8 w-8 items-center justify-center text-earth"
+          className="md:hidden flex h-8 w-8 items-center justify-center text-ink"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -94,15 +94,15 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 isActive
-                  ? "text-base text-ink underline decoration-rust underline-offset-4"
-                  : "text-base text-earth transition-colors hover:text-ink"
+                  ? "text-base font-bold text-night underline decoration-rust underline-offset-4"
+                  : "text-base text-ink transition-colors hover:text-night"
               }
             >
               {label}
             </NavLink>
           ))}
           <button
-            className="cursor-pointer text-left text-xs uppercase tracking-[0.08em] text-earth"
+            className="cursor-pointer text-left text-xs uppercase tracking-[0.08em] text-ink"
             onClick={() => window.open("https://aedem.org/", "_blank")}
             type="button"
           >
