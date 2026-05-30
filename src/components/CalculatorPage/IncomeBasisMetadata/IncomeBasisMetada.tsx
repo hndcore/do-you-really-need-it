@@ -1,5 +1,9 @@
 import TextInput from "@/components/shared/TextInput/TextInput";
 import { useCalculatorContext, IncomeBasisEnum } from "@/contexts/CalculatorContext/CalculatorContext";
+import {
+  MAX_WORK_HOURS_PER_DAY,
+  MAX_WORKING_DAYS_PER_MONTH,
+} from "@/utils/calculatorLogic";
 import type React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -59,6 +63,7 @@ const IncomeBasisMetadata: React.FC = () => {
           error={errors.workHours}
           step="0.5"
           min="0"
+          max={MAX_WORK_HOURS_PER_DAY}
         />
 
         <TextInput
@@ -101,6 +106,7 @@ const IncomeBasisMetadata: React.FC = () => {
             error={errors.workHours}
             step="0.5"
             min="0"
+            max={MAX_WORK_HOURS_PER_DAY}
           />
 
           <TextInput
@@ -118,6 +124,7 @@ const IncomeBasisMetadata: React.FC = () => {
             error={errors.workingDays}
             step="1"
             min="0"
+            max={MAX_WORKING_DAYS_PER_MONTH}
           />
         </div>
 

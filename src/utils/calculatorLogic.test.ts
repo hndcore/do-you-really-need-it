@@ -25,6 +25,21 @@ describe("calculatorLogic", () => {
     });
   });
 
+  it("validates work schedule upper limits", () => {
+    expect(
+      validateCalculatorInput({
+        price: "10",
+        workHoursPerDay: "25",
+        takeHomePay: "1000",
+        workingDaysPerMonth: "366",
+        basis: IncomeBasisEnum.Monthly,
+      }),
+    ).toEqual({
+      workHours: "Please enter 24 work hours per day or less",
+      workingDays: "Please enter 31 working days per month or less",
+    });
+  });
+
   it("calculates hours from every income basis", () => {
     expect(calculateHoursFromBasis(80, 8, 10, IncomeBasisEnum.Hourly, 20)).toBe(8);
     expect(calculateHoursFromBasis(80, 8, 80, IncomeBasisEnum.Daily, 20)).toBe(8);

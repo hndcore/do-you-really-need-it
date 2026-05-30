@@ -75,8 +75,10 @@
       "errors": {
         "price": "Introduce un precio válido",
         "workHours": "Introduce horas de trabajo válidas por día",
+        "workHoursMax": "Introduce {{max}} horas de trabajo por día o menos",
         "takeHome": "Introduce una cantidad válida de sueldo neto",
-        "workingDays": "Introduce días laborables válidos por mes"
+        "workingDays": "Introduce días laborables válidos por mes",
+        "workingDaysMax": "Introduce {{max}} días laborables por mes o menos"
       }
     },
     "units": {

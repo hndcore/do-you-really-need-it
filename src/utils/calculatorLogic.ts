@@ -29,6 +29,9 @@ type CalculatorInput = {
   basis: IncomeBasisEnum;
 };
 
+export const MAX_WORK_HOURS_PER_DAY = 24;
+export const MAX_WORKING_DAYS_PER_MONTH = 31;
+
 const translate = (t: TFunction | undefined, key: string, options?: Record<string, unknown>) =>
   (t ?? i18n.t)(key, options);
 
@@ -45,8 +48,15 @@ export const validateCalculatorInput = ({
     errors.price = translate(t, "calculator.form.errors.price");
   }
 
-  if (!workHoursPerDay || parseFloat(workHoursPerDay) <= 0) {
+  const workHours = parseFloat(workHoursPerDay);
+  const workingDays = parseFloat(workingDaysPerMonth);
+
+  if (!workHoursPerDay || workHours <= 0) {
     errors.workHours = translate(t, "calculator.form.errors.workHours");
+  } else if (workHours > MAX_WORK_HOURS_PER_DAY) {
+    errors.workHours = translate(t, "calculator.form.errors.workHoursMax", {
+      max: MAX_WORK_HOURS_PER_DAY,
+    });
   }
 
   if (!takeHomePay || parseFloat(takeHomePay) <= 0) {
@@ -55,9 +65,16 @@ export const validateCalculatorInput = ({
 
   if (
     (basis === IncomeBasisEnum.Monthly || basis === IncomeBasisEnum.Yearly) &&
-    (!workingDaysPerMonth || parseFloat(workingDaysPerMonth) <= 0)
+    (!workingDaysPerMonth || workingDays <= 0)
   ) {
     errors.workingDays = translate(t, "calculator.form.errors.workingDays");
+  } else if (
+    (basis === IncomeBasisEnum.Monthly || basis === IncomeBasisEnum.Yearly) &&
+    workingDays > MAX_WORKING_DAYS_PER_MONTH
+  ) {
+    errors.workingDays = translate(t, "calculator.form.errors.workingDaysMax", {
+      max: MAX_WORKING_DAYS_PER_MONTH,
+    });
   }
 
   return errors;

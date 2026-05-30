@@ -75,8 +75,10 @@
       "errors": {
         "price": "Please enter a valid price",
         "workHours": "Please enter valid work hours per day",
+        "workHoursMax": "Please enter {{max}} work hours per day or less",
         "takeHome": "Please enter a valid take-home pay amount",
-        "workingDays": "Please enter valid working days per month"
+        "workingDays": "Please enter valid working days per month",
+        "workingDaysMax": "Please enter {{max}} working days per month or less"
       }
     },
     "units": {
