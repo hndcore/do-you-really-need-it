@@ -64,7 +64,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
               {t("calculator.results.daysLabor")}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
-              {(hoursValue / 8).toFixed(1)}
+              {(hoursValue / 8).toFixed(2)}
             </p>
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
@@ -72,7 +72,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
               {t("calculator.results.weeksEffort")}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
-              {(hoursValue / 40).toFixed(1)}
+              {(hoursValue / 40).toFixed(2)}
             </p>
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">

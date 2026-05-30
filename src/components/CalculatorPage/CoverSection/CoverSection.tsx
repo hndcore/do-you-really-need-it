@@ -3,8 +3,8 @@ import { Trans, useTranslation } from "react-i18next";
 
 const formatExampleTime = (hours: number, t: (key: string, options?: Record<string, unknown>) => string): string => {
   if (hours < 1) return t("calculator.cover.time.minutes", { count: Math.round(hours * 60) });
-  if (hours < 8) return t("calculator.cover.time.hours", { count: hours.toFixed(1) });
-  return t("calculator.cover.time.days", { count: (hours / 8).toFixed(1) });
+  if (hours < 8) return t("calculator.cover.time.hours", { count: hours.toFixed(2) });
+  return t("calculator.cover.time.days", { count: (hours / 8).toFixed(2) });
 };
 
 const examples = [
