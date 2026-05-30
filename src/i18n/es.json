@@ -95,6 +95,7 @@
       "eyebrow": "Evaluación consciente",
       "title": "Esto te cuesta <em>{{hours}} horas</em> de tu vida.",
       "daysLabor": "Días de trabajo",
+      "minutesCost": "Minutos de vida",
       "weeksEffort": "Semanas de esfuerzo",
       "affordability": "Asequibilidad",
       "affordabilityLevels": {

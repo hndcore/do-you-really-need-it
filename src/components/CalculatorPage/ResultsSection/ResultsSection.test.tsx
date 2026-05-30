@@ -56,6 +56,20 @@ describe("ResultsSection", () => {
     expect(screen.getByText("Opportunity cost")).toBeInTheDocument();
   });
 
+  it("shows minutes instead of weeks when the time cost is below a work day", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0.99);
+
+    render(
+      <CalculatorProvider>
+        <ResultsWithValue hoursValue={6} />
+      </CalculatorProvider>,
+    );
+
+    expect(await screen.findByText("Minutes of life")).toBeInTheDocument();
+    expect(screen.getByText("360")).toBeInTheDocument();
+    expect(screen.queryByText("Weeks of effort")).not.toBeInTheDocument();
+  });
+
   it.each([
     [1, /small amount of work/i],
     [6, /less than a work day/i],

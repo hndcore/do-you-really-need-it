@@ -27,6 +27,16 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
     () => getRandomReflectionCards(3),
     [result],
   );
+  const effortSummary =
+    hoursValue < 8
+      ? {
+          label: t("calculator.results.minutesCost"),
+          value: Math.round(hoursValue * 60).toString(),
+        }
+      : {
+          label: t("calculator.results.weeksEffort"),
+          value: (hoursValue / 40).toFixed(2),
+        };
 
   if (!result) return null;
 
@@ -69,10 +79,10 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-ink">
-              {t("calculator.results.weeksEffort")}
+              {effortSummary.label}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
-              {(hoursValue / 40).toFixed(2)}
+              {effortSummary.value}
             </p>
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
