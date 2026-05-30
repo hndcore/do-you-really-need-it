@@ -1,3 +1,6 @@
+import i18n from "@/i18n";
+import type { TFunction } from "i18next";
+
 export enum IncomeBasisEnum {
   Hourly = "hourly",
   Daily = "daily",
@@ -26,32 +29,35 @@ type CalculatorInput = {
   basis: IncomeBasisEnum;
 };
 
+const translate = (t: TFunction | undefined, key: string, options?: Record<string, unknown>) =>
+  (t ?? i18n.t)(key, options);
+
 export const validateCalculatorInput = ({
   price,
   workHoursPerDay,
   takeHomePay,
   workingDaysPerMonth,
   basis,
-}: CalculatorInput): ErrorsShape => {
+}: CalculatorInput, t?: TFunction): ErrorsShape => {
   const errors: ErrorsShape = {};
 
   if (!price || parseFloat(price) <= 0) {
-    errors.price = "Please enter a valid price";
+    errors.price = translate(t, "calculator.form.errors.price");
   }
 
   if (!workHoursPerDay || parseFloat(workHoursPerDay) <= 0) {
-    errors.workHours = "Please enter valid work hours per day";
+    errors.workHours = translate(t, "calculator.form.errors.workHours");
   }
 
   if (!takeHomePay || parseFloat(takeHomePay) <= 0) {
-    errors.takeHome = "Please enter a valid take-home pay amount";
+    errors.takeHome = translate(t, "calculator.form.errors.takeHome");
   }
 
   if (
     (basis === IncomeBasisEnum.Monthly || basis === IncomeBasisEnum.Yearly) &&
     (!workingDaysPerMonth || parseFloat(workingDaysPerMonth) <= 0)
   ) {
-    errors.workingDays = "Please enter valid working days per month";
+    errors.workingDays = translate(t, "calculator.form.errors.workingDays");
   }
 
   return errors;
@@ -82,7 +88,7 @@ export const calculateResult = ({
   takeHomePay,
   workingDaysPerMonth,
   basis,
-}: CalculatorInput): CalculatorResult => {
+}: CalculatorInput, t?: TFunction): CalculatorResult => {
   const priceNum = parseFloat(price);
   const hoursPerDay = parseFloat(workHoursPerDay);
   const netSalary = parseFloat(takeHomePay);
@@ -99,7 +105,7 @@ export const calculateResult = ({
     case IncomeBasisEnum.Hourly:
       return {
         value: hoursValue,
-        unit: hoursValue === 1 ? "hour" : "hours",
+        unit: translate(t, "calculator.units.hour", { count: hoursValue }),
         hoursValue,
       };
     case IncomeBasisEnum.Daily: {
@@ -107,7 +113,7 @@ export const calculateResult = ({
 
       return {
         value,
-        unit: value === 1 ? "day" : "days",
+        unit: translate(t, "calculator.units.day", { count: value }),
         hoursValue,
       };
     }
@@ -116,7 +122,7 @@ export const calculateResult = ({
 
       return {
         value,
-        unit: value === 1 ? "month" : "months",
+        unit: translate(t, "calculator.units.month", { count: value }),
         hoursValue,
       };
     }
@@ -125,25 +131,25 @@ export const calculateResult = ({
 
       return {
         value,
-        unit: value === 1 ? "year" : "years",
+        unit: translate(t, "calculator.units.year", { count: value }),
         hoursValue,
       };
     }
   }
 };
 
-export const getAffordability = (hours: number): string => {
-  if (hours < 2) return "Very high";
-  if (hours < 8) return "High";
-  if (hours < 24) return "Medium";
-  if (hours < 80) return "Low";
-  return "Very low";
+export const getAffordability = (hours: number, t?: TFunction): string => {
+  if (hours < 2) return translate(t, "calculator.results.affordabilityLevels.veryHigh");
+  if (hours < 8) return translate(t, "calculator.results.affordabilityLevels.high");
+  if (hours < 24) return translate(t, "calculator.results.affordabilityLevels.medium");
+  if (hours < 80) return translate(t, "calculator.results.affordabilityLevels.low");
+  return translate(t, "calculator.results.affordabilityLevels.veryLow");
 };
 
-export const getWaitPeriodMessage = (hours: number): string => {
+export const getWaitPeriodMessage = (hours: number, t?: TFunction): string => {
   if (hours > 10) {
-    return "Wait 30 days before buying.";
+    return translate(t, "calculator.results.waitPeriod.days30");
   }
 
-  return "Wait 24 hours before buying.";
+  return translate(t, "calculator.results.waitPeriod.hours24");
 };

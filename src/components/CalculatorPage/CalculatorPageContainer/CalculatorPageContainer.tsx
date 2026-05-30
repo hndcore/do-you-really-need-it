@@ -4,11 +4,13 @@ import {
   validateCalculatorInput,
 } from "@/utils/calculatorLogic";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import CoverSection from "../CoverSection/CoverSection";
 import CalculatorSection from "../CalculatorSection/CalculatorSection";
 import ResultsSection from "../ResultsSection/ResultsSection";
 
 const CalculatorPageContainer = () => {
+  const { t } = useTranslation();
   const {
     workHoursPerDay,
     setWorkHoursPerDay,
@@ -35,7 +37,7 @@ const CalculatorPageContainer = () => {
       workingDaysPerMonth,
       basis,
     };
-    const newErrors = validateCalculatorInput(input);
+    const newErrors = validateCalculatorInput(input, t);
 
     setErrors(newErrors);
 
@@ -46,7 +48,7 @@ const CalculatorPageContainer = () => {
     setIsLoading(true);
   
     setTimeout(() => {
-      setResult(calculateResult(input));
+      setResult(calculateResult(input, t));
       setIsLoading(false);
 
       setTimeout(() => {

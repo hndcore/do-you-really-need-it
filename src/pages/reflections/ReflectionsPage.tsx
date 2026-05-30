@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
+
 type Quote = {
   text: string;
   author: string;
@@ -7,92 +10,35 @@ type Quote = {
 type RecommendedRead = {
   title: string;
   author: string;
-  href?: string;
 };
 
-const quotes: Quote[] = [
-  {
-    text: "Too many people spend money they have not earned, to buy things they do not want, to impress people they do not like.",
-    author: "Will Rogers",
-  },
-  {
-    text: "The things you own end up owning you.",
-    author: "Chuck Palahniuk",
-    source: "Fight Club",
-  },
-  {
-    text: "Wealth is the ability to fully experience life.",
-    author: "Henry David Thoreau",
-  },
-  {
-    text: "Money often costs too much.",
-    author: "Ralph Waldo Emerson",
-  },
-  {
-    text: "It is not the man who has too little, but the man who craves more, that is poor.",
-    author: "Seneca",
-  },
-  {
-    text: "Money is a terrible master but an excellent servant.",
-    author: "P.T. Barnum",
-  },
-  {
-    text: "It is the time you have wasted for your rose that makes your rose so important.",
-    author: "Antoine de Saint-Exupery",
-    source: "The Little Prince",
-  },
-  {
-    text: "The price of anything is the amount of life you exchange for it.",
-    author: "Henry David Thoreau",
-  },
-  {
-    text: "He who buys what he does not need steals from himself.",
-    author: "Swedish proverb",
-  },
-  {
-    text: "The greatest wealth is to live content with little.",
-    author: "Plato",
-  },
-  {
-    text: "Beware the barrenness of a busy life.",
-    author: "Socrates",
-  },
-];
+const recommendedReadLinks: Record<number, string> = {
+  5: "https://www.jimrohn.com/wisdom/articles/time-vs-money",
+};
 
-const recommendedReads: RecommendedRead[] = [
-  {
-    title: "On the Shortness of Life",
-    author: "Seneca",
-  },
-  {
-    title: "The Myth of Sisyphus",
-    author: "Albert Camus",
-  },
-  {
-    title: "Meditations",
-    author: "Marcus Aurelius",
-  },
-  {
-    title: "The Burnout Society",
-    author: "Byung-Chul Han",
-  },
-  {
-    title: "The Scent of Time",
-    author: "Byung-Chul Han",
-  },
-  {
-    title: "Time Is More Valuable Than Money",
-    author: "Jim Rohn",
-    href: "https://www.jimrohn.com/wisdom/articles/time-vs-money",
-  },
-];
+const hasTranslatedText = (items: Array<Record<string, string | undefined>>) =>
+  items.some((item) => Object.values(item).some(Boolean));
 
 const ReflectionsPage = () => {
+  const { t } = useTranslation();
+  const translatedQuotes = t("reflections.quotes", { returnObjects: true }) as Quote[];
+  const translatedRecommendedReads = t("reflections.recommended", {
+    returnObjects: true,
+  }) as RecommendedRead[];
+  const quotes = hasTranslatedText(translatedQuotes)
+    ? translatedQuotes
+    : (i18n.getFixedT("en")("reflections.quotes", { returnObjects: true }) as Quote[]);
+  const recommendedReads = hasTranslatedText(translatedRecommendedReads)
+    ? translatedRecommendedReads
+    : (i18n.getFixedT("en")("reflections.recommended", {
+        returnObjects: true,
+      }) as RecommendedRead[]);
+
   return (
     <main className="min-h-[calc(100vh-var(--navbar-height)-var(--footer-height))] flex-1 bg-paper px-[6vw] py-14 sm:py-16 lg:py-20">
       <section className="mx-auto max-w-6xl border-t border-mist pt-8">
         <h1 className="mb-4 text-sm uppercase tracking-[0.14em] text-earth">
-          Reflections
+          {t("reflections.title")}
         </h1>
 
         <div className="mt-16 grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
@@ -122,11 +68,12 @@ const ReflectionsPage = () => {
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             <div className="col-span-full">
               <h2 className="mb-4 text-sm uppercase tracking-[0.14em] text-earth">
-                Recommended reads
+                {t("reflections.recommendedReads")}
               </h2>
             </div>
 
-            {recommendedReads.map((read) => {
+            {recommendedReads.map((read, index) => {
+              const href = recommendedReadLinks[index];
               const content = (
                 <>
                   <span className="block font-serif text-3xl italic leading-tight text-ink">
@@ -138,10 +85,10 @@ const ReflectionsPage = () => {
                 </>
               );
 
-              return read.href ? (
+              return href ? (
                 <a
                   key={`${read.author}-${read.title}`}
-                  href={read.href}
+                  href={href}
                   target="_blank"
                   rel="noreferrer"
                   className="border-t border-mist pt-4 underline underline-offset-4 transition-colors hover:border-rust"

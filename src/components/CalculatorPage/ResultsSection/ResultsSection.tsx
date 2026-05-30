@@ -6,6 +6,7 @@ import {
 import { getRandomReflectionCards } from "@/utils/reflectionCards";
 import { getResultMessage } from "@/utils/resultMessages";
 import React, { useMemo } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 type ResultsSectionProps = {
   resultRef: React.RefObject<HTMLElement | null>;
@@ -14,12 +15,13 @@ type ResultsSectionProps = {
 const ResultsSection: React.FC<ResultsSectionProps> = ({
   resultRef,
 }) => {
+  const { t } = useTranslation();
   const { result } = useCalculatorContext();
   const hoursValue = result?.hoursValue ?? 0;
 
   const resultMessage = useMemo(
-    () => getResultMessage(hoursValue),
-    [result, hoursValue],
+    () => getResultMessage(hoursValue, t),
+    [result, hoursValue, t],
   );
   const selectedReflectionCards = useMemo(
     () => getRandomReflectionCards(3),
@@ -39,15 +41,17 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
       <div className="mx-auto max-w-6xl">
         <div className="border-t border-mist pt-8">
           <p className="mb-4 text-xs uppercase tracking-[0.14em] text-ink">
-            Conscious evaluation
+            {t("calculator.results.eyebrow")}
           </p>
           <h2
             id="results-heading"
             className="max-w-4xl font-serif text-[clamp(40px,4.3vw,74px)] leading-none text-ink"
           >
-            This costs you{" "}
-            <em className="text-rust">{Math.round(hoursValue)} hours</em> of
-            your life.
+            <Trans
+              i18nKey="calculator.results.title"
+              values={{ hours: Math.round(hoursValue) }}
+              components={{ em: <em className="text-rust" /> }}
+            />
           </h2>
           <p className="mt-5 max-w-2xl text-lg font-light leading-[1.65] text-ink">
             {resultMessage}
@@ -57,7 +61,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="rounded-[2px] border border-mist bg-ink p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-paper">
-              Days of labor
+              {t("calculator.results.daysLabor")}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
               {(hoursValue / 8).toFixed(1)}
@@ -65,7 +69,7 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-ink">
-              Weeks of effort
+              {t("calculator.results.weeksEffort")}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
               {(hoursValue / 40).toFixed(1)}
@@ -73,10 +77,10 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
           </div>
           <div className="rounded-[2px] border border-mist bg-paper p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-ink">
-              Affordability
+              {t("calculator.results.affordability")}
             </p>
             <p className="mt-3 font-serif text-5xl italic text-rust">
-              {getAffordability(hoursValue)}
+              {getAffordability(hoursValue, t)}
             </p>
           </div>
         </div>
@@ -84,14 +88,17 @@ const ResultsSection: React.FC<ResultsSectionProps> = ({
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
           {selectedReflectionCards.map((card) => (
             <article
-              key={card.title}
+              key={card.id}
               className="border-t pt-5 border-rust"
             >
               <h3 className="font-serif text-3xl italic text-ink">
-                {card.title}
+                {t(card.titleKey)}
               </h3>
               <p className="mt-3 text-base leading-relaxed text-clay">
-                {card.description(hoursValue, getWaitPeriodMessage(hoursValue))}
+                {t(card.descriptionKey, {
+                  hours: Math.round(hoursValue),
+                  waitPeriodMessage: getWaitPeriodMessage(hoursValue, t),
+                })}
               </p>
             </article>
           ))}

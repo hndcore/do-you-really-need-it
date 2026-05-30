@@ -1,0 +1,281 @@
+{
+  "app": {
+    "brand": "¿De verdad lo necesitas?"
+  },
+  "header": {
+    "nav": {
+      "calculator": "Calculadora",
+      "reflections": "Reflexiones",
+      "history": "Acerca de"
+    },
+    "support": "Apoya a pacientes de EM en España ->",
+    "menu": {
+      "open": "Abrir menú",
+      "close": "Cerrar menú",
+      "buttonOpen": "Menú",
+      "buttonClose": "Cerrar"
+    },
+    "language": {
+      "label": "Idioma",
+      "en": "EN",
+      "es": "ES"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Manuel L. Camarena. Reflexiona antes de gastar. Sin copyright. Gratis para usar, modificar y distribuir. Con ❤️"
+  },
+  "calculator": {
+    "cover": {
+      "eyebrow": "El coste real que deberías tener en cuenta",
+      "titleBefore": "¿De",
+      "titleEmphasis": "verdad",
+      "titleAfter": "lo necesitas?",
+      "intro": "Transforma cada compra en una medida de tu recurso más valioso: <strong>el tiempo</strong>. La reflexión es el antídoto contra el impulso.",
+      "exampleIntro": "Por ejemplo, para alguien con un sueldo neto mensual de 2000 € trabajando 8 h/día y 22 días/mes.",
+      "exampleLife": "{{time}} de tu vida",
+      "examples": [
+        {
+          "label": "café de 6 €"
+        },
+        {
+          "label": "zapatos de 150 €"
+        },
+        {
+          "label": "portátil de 1400 €"
+        }
+      ],
+      "time": {
+        "minutes": "{{count}} min",
+        "hours": "{{count}} h",
+        "days": "{{count}} días"
+      }
+    },
+    "form": {
+      "basisLabel": "01 - La base de tu salario",
+      "priceLabel": "02 - El coste - ¿cuánto planeas gastar?",
+      "calculate": "Calcular esfuerzo",
+      "clear": "Limpiar",
+      "privacy": "No rastreamos ni almacenamos ninguno de tus datos. Todos los cálculos se hacen en tu navegador y los resultados no se envían a ningún servidor.",
+      "loading": "Calculando...",
+      "basis": {
+        "hourly": "Por hora",
+        "daily": "Diario",
+        "monthly": "Mensual",
+        "yearly": "Anual"
+      },
+      "fields": {
+        "takeHomeHourly": "Tu sueldo neto (por hora)",
+        "workHoursDay": "Horas de trabajo / día",
+        "takeHomeDaily": "Tu sueldo neto (por día)",
+        "workingDaysMonth": "Días laborables / mes",
+        "takeHomePeriod": "Tu sueldo neto (por {{period}})",
+        "periodMonth": "mes",
+        "periodYear": "año"
+      },
+      "errors": {
+        "price": "Introduce un precio válido",
+        "workHours": "Introduce horas de trabajo válidas por día",
+        "takeHome": "Introduce una cantidad válida de sueldo neto",
+        "workingDays": "Introduce días laborables válidos por mes"
+      }
+    },
+    "units": {
+      "hour_one": "hora",
+      "hour_other": "horas",
+      "day_one": "día",
+      "day_other": "días",
+      "month_one": "mes",
+      "month_other": "meses",
+      "year_one": "año",
+      "year_other": "años"
+    },
+    "results": {
+      "eyebrow": "Evaluación consciente",
+      "title": "Esto te cuesta <em>{{hours}} horas</em> de tu vida.",
+      "daysLabor": "Días de trabajo",
+      "weeksEffort": "Semanas de esfuerzo",
+      "affordability": "Asequibilidad",
+      "affordabilityLevels": {
+        "veryHigh": "Muy alta",
+        "high": "Alta",
+        "medium": "Media",
+        "low": "Baja",
+        "veryLow": "Muy baja"
+      },
+      "waitPeriod": {
+        "days30": "Espera 30 días antes de comprar.",
+        "hours24": "Espera 24 horas antes de comprar."
+      },
+      "messages": {
+        "small": [
+          "Es una cantidad pequeña de trabajo. Si de verdad lo quieres o lo necesitas, adelante. Solo vigila con qué frecuencia ocurren estas pequeñas compras.",
+          "Esto no es gran cosa por sí solo. La única pregunta es si es útil, disfrutable o simplemente algo en lo que hacer clic.",
+          "Unas pocas horas son un intercambio justo por algunas cosas. Si realmente va a mejorar tu día o te hace feliz, eso también importa.",
+          "Esto entra en territorio de pequeño capricho. Merece la pena si se siente elegido, menos si se siente automático."
+        ],
+        "day": [
+          "Es menos de un día de trabajo. Según la Regla de 30, si puedes esperar 30 días y todavía lo quieres, probablemente merezca la pena. Si no, acabas de ahorrarte un día de trabajo.",
+          "Esto cuesta menos de un día de trabajo. Eso es fácil de justificar, así que también es fácil dejar de pensar en ello demasiado pronto.",
+          "Estás intercambiando parte de un día de trabajo por esto. Si mañana aún lo elegirías, quizá esté bien.",
+          "Esto no es enorme, pero tampoco es nada. Esperar un día puede decirte mucho."
+        ],
+        "days": [
+          "Son casi {{days}} días completos de trabajo. Merece la pena parar antes de entregar tanto tiempo a una sola compra.",
+          "Son alrededor de {{days}} días de trabajo. Imagina terminar esos días y elegir esto con el dinero en la mano.",
+          "Esto son aproximadamente {{days}} días de trabajo. Asegúrate de estar comprando algo que todavía te importará más adelante.",
+          "Estás cerca de intercambiar {{days}} días completos de trabajo por esto. Merece un sí real, no uno rápido."
+        ],
+        "weeks": [
+          "Son alrededor de {{weeks}} semanas de trabajo de tu vida. Considera esperar al menos 30 días antes de hacer esta compra.",
+          "Esto son unas {{weeks}} semanas de trabajo. Déjalo reposar un tiempo y mira si sigues sintiendo lo mismo.",
+          "Estás viendo aproximadamente {{weeks}} semanas de trabajo. Es suficiente tiempo como para merecer una decisión más lenta.",
+          "Eso se acerca a {{weeks}} semanas de trabajo. Pregunta qué otra cosa podría hacer este dinero por ti en silencio."
+        ],
+        "largeWeeks": [
+          "Son alrededor de {{weeks}} semanas de trabajo. Esto ya no es una compra casual.",
+          "Esto representa unas {{weeks}} semanas de trabajo. Trátalo como una decisión, no solo como pasar por caja.",
+          "Estás sopesando aproximadamente {{weeks}} semanas de esfuerzo. Consúltalo con la almohada y revisa los números otra vez.",
+          "Eso son alrededor de {{weeks}} semanas de tiempo ganado. Sé honesto sobre cuántas veces lo vas a usar de verdad."
+        ],
+        "months": [
+          "Son meses de trabajo. Considera si esta compra realmente encaja con tus valores, tu estabilidad y tus objetivos a largo plazo.",
+          "Esto es una cantidad importante de trabajo. Ponlo al lado del alquiler, los ahorros, la salud, la familia y las cosas aburridas que mantienen la vida estable.",
+          "A esta escala, la pregunta no es solo si puedes pagarlo. Es si quieres trabajar tanto tiempo por ello.",
+          "Esto es lo bastante grande como para esperar, comparar opciones y hablarlo antes de decidir."
+        ]
+      },
+      "reflectionCards": {
+        "ruleOf30": {
+          "title": "La Regla de 30",
+          "description": "{{waitPeriodMessage}} Si todavía lo quieres después de eso, la decisión será más clara."
+        },
+        "maintenance": {
+          "title": "Coste de mantenimiento",
+          "description": "¿Necesitará limpieza, arreglos, carga, actualizaciones, recambios o accesorios extra? Cuenta eso también."
+        },
+        "opportunity": {
+          "title": "Coste de oportunidad",
+          "description": "Esas {{hours}} horas también podrían quedarse en tu bolsillo para descanso, viajes, deuda, ahorros o un mes más tranquilo."
+        },
+        "storage": {
+          "title": "Coste de almacenamiento",
+          "description": "¿Dónde vivirá esto cuando no lo estés usando? Si no lo sabes, eso es parte del coste."
+        },
+        "replacement": {
+          "title": "Prueba de reemplazo",
+          "description": "Si lo perdieras dentro de seis meses, ¿comprarías lo mismo otra vez de inmediato?"
+        },
+        "usage": {
+          "title": "Previsión de uso",
+          "description": "Nombra las próximas tres veces en que lo usarías. Si eso cuesta, el caso de uso puede ser flojo."
+        },
+        "future": {
+          "title": "Tu yo futuro",
+          "description": "El mes que viene, cuando la novedad haya pasado, ¿te alegrará que este dinero ya no esté ahí?"
+        },
+        "borrow": {
+          "title": "Pide prestado primero",
+          "description": "Si esto es para un uso ocasional, pedirlo prestado, alquilarlo o comprarlo usado podría ser suficiente."
+        },
+        "upgrade": {
+          "title": "Trampa de la mejora",
+          "description": "Si ya tienes una versión que funciona, escribe qué mejora realmente. Sé específico."
+        }
+      }
+    }
+  },
+  "reflections": {
+    "title": "Reflexiones",
+    "recommendedReads": "Lecturas recomendadas",
+    "quotes": [
+      {
+        "text": "Demasiada gente gasta dinero que no ha ganado, para comprar cosas que no quiere, para impresionar a gente que no le cae bien.",
+        "author": "Will Rogers"
+      },
+      {
+        "text": "Las cosas que posees acaban poseyéndote.",
+        "author": "Chuck Palahniuk",
+        "source": "El club de la lucha"
+      },
+      {
+        "text": "La riqueza es la capacidad de experimentar plenamente la vida.",
+        "author": "Henry David Thoreau"
+      },
+      {
+        "text": "El dinero a menudo cuesta demasiado.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "text": "No es pobre el hombre que tiene demasiado poco, sino el hombre que ansía más.",
+        "author": "Séneca"
+      },
+      {
+        "text": "El dinero es un amo terrible, pero un excelente sirviente.",
+        "author": "P.T. Barnum"
+      },
+      {
+        "text": "Es el tiempo que has perdido por tu rosa lo que hace que tu rosa sea tan importante.",
+        "author": "Antoine de Saint-Exupéry",
+        "source": "El Principito"
+      },
+      {
+        "text": "El precio de cualquier cosa es la cantidad de vida que intercambias por ella.",
+        "author": "Henry David Thoreau"
+      },
+      {
+        "text": "Quien compra lo que no necesita se roba a sí mismo.",
+        "author": "Proverbio sueco"
+      },
+      {
+        "text": "La mayor riqueza es vivir contento con poco.",
+        "author": "Platón"
+      },
+      {
+        "text": "Cuidado con la esterilidad de una vida ocupada.",
+        "author": "Sócrates"
+      }
+    ],
+    "recommended": [
+      {
+        "title": "Sobre la brevedad de la vida",
+        "author": "Séneca"
+      },
+      {
+        "title": "El mito de Sísifo",
+        "author": "Albert Camus"
+      },
+      {
+        "title": "Meditaciones",
+        "author": "Marco Aurelio"
+      },
+      {
+        "title": "La sociedad del cansancio",
+        "author": "Byung-Chul Han"
+      },
+      {
+        "title": "El aroma del tiempo",
+        "author": "Byung-Chul Han"
+      },
+      {
+        "title": "El tiempo es más valioso que el dinero",
+        "author": "Jim Rohn"
+      }
+    ]
+  },
+  "history": {
+    "eyebrow": "¿Por qué nació esta herramienta?",
+    "title": "Una forma más consciente de gastar.",
+    "imageAlt": "Retrato del autor",
+    "caption": "Nota personal",
+    "originTitle": "¿Por qué nació esta herramienta?",
+    "originP1": "Vivimos en una sociedad hiperconectada centrada en la productividad, donde el dinero parece ser el único recurso que importa al construir un proyecto de vida. Sin embargo, en esa carrera por las cosas materiales, a menudo dejamos atrás el activo más valioso que tenemos: <strong>el tiempo</strong>.",
+    "originP2": "El dinero que ganamos trabajando no es más que <strong>tiempo de nuestras vidas que hemos intercambiado</strong>. El tiempo es un recurso finito, irrecuperable y el verdadero motor de todo.",
+    "originP3": "No se trata de no gastar lo que ganamos, sino de hacerlo con responsabilidad. Se trata de ser conscientes de que, más allá de lo material, el verdadero lujo es el tiempo que usamos para disfrutar de nuestros seres queridos, un hobby, hacer deporte, descansar o simplemente cuidar nuestra salud y encontrar la paz.",
+    "projectTitle": "Un proyecto personal",
+    "projectP1": "El objetivo de esta herramienta no es dar lecciones a nadie. Desde luego no soy la mejor persona del mundo gestionando mis finanzas; de hecho, <strong>esa es exactamente la razón por la que construí esta calculadora</strong>: para aprender a valorar cada decisión económica que tomo.",
+    "projectP2": "Me encanta mi trabajo, y programar también es mi pasión. Por eso, no se me ocurrió una forma mejor de abordar esta necesidad que combinando mis conocimientos técnicos con este proceso de aprendizaje personal.",
+    "projectP3": "En este 2026, he decidido empezar una desintoxicación digital voluntaria de la sobrecarga de información que nos rodea. He empezado a comer más sano, hacer ejercicio y llevar un estilo de vida mejor. ¿La razón? <strong>Quiero ser más consciente de mi tiempo de vida y disfrutarlo de la forma en que realmente quiero.</strong>",
+    "projectP4": "Si has leído hasta aquí, muchas gracias por darme unos minutos de tu recurso más valioso.",
+    "projectP5": "Espero de corazón que esta herramienta te sea útil."
+  }
+}

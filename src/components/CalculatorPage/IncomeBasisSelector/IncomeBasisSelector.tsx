@@ -1,4 +1,5 @@
 import { IncomeBasisEnum } from "@/contexts/CalculatorContext/CalculatorContext";
+import { useTranslation } from "react-i18next";
 
 interface IncomeBasisSelectorProps {
   value: IncomeBasisEnum;
@@ -6,11 +7,11 @@ interface IncomeBasisSelectorProps {
   labelledBy?: string;
 }
 
-const options: { value: IncomeBasisEnum; label: string }[] = [
-  { value: IncomeBasisEnum.Hourly, label: "Hourly" },
-  { value: IncomeBasisEnum.Daily, label: "Daily" },
-  { value: IncomeBasisEnum.Monthly, label: "Monthly" },
-  { value: IncomeBasisEnum.Yearly, label: "Yearly" },
+const options: { value: IncomeBasisEnum; labelKey: string }[] = [
+  { value: IncomeBasisEnum.Hourly, labelKey: "calculator.form.basis.hourly" },
+  { value: IncomeBasisEnum.Daily, labelKey: "calculator.form.basis.daily" },
+  { value: IncomeBasisEnum.Monthly, labelKey: "calculator.form.basis.monthly" },
+  { value: IncomeBasisEnum.Yearly, labelKey: "calculator.form.basis.yearly" },
 ];
 
 const IncomeBasisSelector = ({
@@ -18,6 +19,8 @@ const IncomeBasisSelector = ({
   onChange,
   labelledBy,
 }: IncomeBasisSelectorProps) => {
+  const { t } = useTranslation();
+
   return (
     <div
       aria-labelledby={labelledBy}
@@ -36,7 +39,7 @@ const IncomeBasisSelector = ({
           }`}
           type="button"
         >
-          {option.label}
+          {t(option.labelKey)}
         </button>
       ))}
     </div>

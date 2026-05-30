@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
+import { useTranslation } from "react-i18next";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
@@ -18,6 +19,7 @@ const Button = ({
   className = "",
   ...props
 }: ButtonProps) => {
+  const { t } = useTranslation();
   const baseStyles = "flex cursor-pointer items-center justify-center rounded-[2px] text-sm uppercase tracking-[0.08em] transition-opacity duration-150 disabled:cursor-not-allowed disabled:opacity-50";
 
   const variantStyles = {
@@ -63,7 +65,7 @@ const Button = ({
               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
             />
           </svg>
-          Calculating...
+          {t("calculator.form.loading")}
         </>
       ) : (
         label

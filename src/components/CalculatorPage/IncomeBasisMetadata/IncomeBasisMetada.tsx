@@ -1,8 +1,10 @@
 import TextInput from "@/components/shared/TextInput/TextInput";
 import { useCalculatorContext, IncomeBasisEnum } from "@/contexts/CalculatorContext/CalculatorContext";
 import type React from "react";
+import { useTranslation } from "react-i18next";
 
 const IncomeBasisMetadata: React.FC = () => {
+  const { t } = useTranslation();
   const {
     basis,
     workHoursPerDay,
@@ -22,7 +24,7 @@ const IncomeBasisMetadata: React.FC = () => {
           prefix="€"
           variant="gray"
           placeholder="0.00"
-          label="Your take-home pay (per hour, net)"
+          label={t("calculator.form.fields.takeHomeHourly")}
           value={takeHomePay}
           onChange={(e) => {
             setTakeHomePay(e.target.value);
@@ -44,7 +46,7 @@ const IncomeBasisMetadata: React.FC = () => {
         <TextInput
           variant="gray"
           placeholder="8"
-          label="Work hours / day"
+          label={t("calculator.form.fields.workHoursDay")}
           value={workHoursPerDay}
           onChange={(e) => {
             setWorkHoursPerDay(e.target.value);
@@ -61,7 +63,7 @@ const IncomeBasisMetadata: React.FC = () => {
           prefix="€"
           variant="gray"
           placeholder="0.00"
-          label="Your take-home pay (per day, net)"
+          label={t("calculator.form.fields.takeHomeDaily")}
           value={takeHomePay}
           onChange={(e) => {
             setTakeHomePay(e.target.value);
@@ -84,7 +86,7 @@ const IncomeBasisMetadata: React.FC = () => {
           <TextInput
             variant="gray"
             placeholder="8"
-            label="Work hours / day"
+            label={t("calculator.form.fields.workHoursDay")}
             value={workHoursPerDay}
             onChange={(e) => {
               setWorkHoursPerDay(e.target.value);
@@ -100,7 +102,7 @@ const IncomeBasisMetadata: React.FC = () => {
           <TextInput
             variant="gray"
             placeholder="22"
-            label="Working days / month"
+            label={t("calculator.form.fields.workingDaysMonth")}
             value={workingDaysPerMonth}
             onChange={(e) => {
               setWorkingDaysPerMonth(e.target.value);
@@ -118,7 +120,13 @@ const IncomeBasisMetadata: React.FC = () => {
           prefix="€"
           variant="gray"
           placeholder="0.00"
-          label={`Your take-home pay (per ${basis === IncomeBasisEnum.Monthly ? "month" : "year"}, net)`}
+          label={t("calculator.form.fields.takeHomePeriod", {
+            period: t(
+              basis === IncomeBasisEnum.Monthly
+                ? "calculator.form.fields.periodMonth"
+                : "calculator.form.fields.periodYear",
+            ),
+          })}
           value={takeHomePay}
           onChange={(e) => {
             setTakeHomePay(e.target.value);

@@ -19,7 +19,7 @@ describe("Header", () => {
     expect(screen.getByText("Do you really need it?")).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Calculator" })[0]).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Reflections" })[0]).toBeInTheDocument();
-    expect(screen.getAllByRole("link", { name: "History" })[0]).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "About" })[0]).toBeInTheDocument();
   });
 
   it("opens and closes the mobile menu when the menu button is pressed", async () => {
@@ -55,7 +55,7 @@ describe("Header", () => {
     expect(open).toHaveBeenCalledWith("https://aedem.org/", "_blank");
 
     await user.click(screen.getByRole("button", { name: "Open menu" }));
-    await user.click(screen.getAllByRole("link", { name: "History" }).at(-1)!);
+    await user.click(screen.getAllByRole("link", { name: "About" }).at(-1)!);
 
     expect(screen.getByRole("button", { name: "Open menu" })).toBeInTheDocument();
   });

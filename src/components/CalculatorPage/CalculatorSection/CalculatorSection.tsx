@@ -4,6 +4,7 @@ import IncomeBasisSelector from "../IncomeBasisSelector/IncomeBasisSelector";
 import IncomeBasisMetadata from "../IncomeBasisMetadata/IncomeBasisMetada";
 import TextInput from "@/components/shared/TextInput/TextInput";
 import Button from "@/components/shared/Button/Button";
+import { useTranslation } from "react-i18next";
 
 type CalculatorSectionProps = {
   calculateEffort: () => void;
@@ -14,6 +15,7 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
   calculateEffort,
   handleClear,
 }) => {
+  const { t } = useTranslation();
   const {
     basis,
     setBasis,
@@ -36,7 +38,7 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             id="income-basis-label"
             className="mb-[0.6rem] block text-xs font-normal uppercase leading-none tracking-[0.14em] text-warm"
           >
-            01 - Your wage basis
+            {t("calculator.form.basisLabel")}
           </label>
           <IncomeBasisSelector
             labelledBy="income-basis-label"
@@ -58,7 +60,7 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
             id="purchase-price-label"
             className="mb-[0.6rem] block text-xs font-normal uppercase leading-none tracking-[0.14em] text-warm"
           >
-            02 - The cost - how much do you plan to spend?
+            {t("calculator.form.priceLabel")}
           </label>
           <TextInput
             id="purchase-price"
@@ -81,14 +83,14 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
 
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button
-            label="Calculate Effort"
+            label={t("calculator.form.calculate")}
             onClick={calculateEffort}
             isLoading={isLoading}
             variant="primary"
             size="md"
           />
           <Button
-            label="Clear"
+            label={t("calculator.form.clear")}
             onClick={handleClear}
             variant="ghost"
             size="lg"
@@ -97,7 +99,7 @@ const CalculatorSection: React.FC<CalculatorSectionProps> = ({
         </div>
       </div>
       <p className="text-center text-sm tracking-[0.04em] text-sand">
-        We don't track or store any of your data. All calculations are done in your browser, and the results are not sent to any server.
+        {t("calculator.form.privacy")}
       </p>
     </section>
   );

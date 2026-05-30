@@ -1,0 +1,281 @@
+{
+  "app": {
+    "brand": "Do you really need it?"
+  },
+  "header": {
+    "nav": {
+      "calculator": "Calculator",
+      "reflections": "Reflections",
+      "history": "About"
+    },
+    "support": "Support MS patients in Spain ->",
+    "menu": {
+      "open": "Open menu",
+      "close": "Close menu",
+      "buttonOpen": "Menu",
+      "buttonClose": "Close"
+    },
+    "language": {
+      "label": "Language",
+      "en": "EN",
+      "es": "ES"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Manuel L. Camarena. Reflect before you spend. No copyright. Free to use, modify and distribute. With ❤️"
+  },
+  "calculator": {
+    "cover": {
+      "eyebrow": "The real cost you should take into account",
+      "titleBefore": "Do you",
+      "titleEmphasis": "really",
+      "titleAfter": "need it?",
+      "intro": "Transform every purchase into a measurement of your most precious resource: <strong>time</strong>. Reflection is the antidote to impulse.",
+      "exampleIntro": "For example, for someone with a €2000 monthly take-home pay working 8h/day and 22 days/month.",
+      "exampleLife": "{{time}} of your life",
+      "examples": [
+        {
+          "label": "6€ coffee"
+        },
+        {
+          "label": "150€ shoes"
+        },
+        {
+          "label": "1400€ laptop"
+        }
+      ],
+      "time": {
+        "minutes": "{{count}} min",
+        "hours": "{{count}}h",
+        "days": "{{count}} days"
+      }
+    },
+    "form": {
+      "basisLabel": "01 - Your wage basis",
+      "priceLabel": "02 - The cost - how much do you plan to spend?",
+      "calculate": "Calculate Effort",
+      "clear": "Clear",
+      "privacy": "We don't track or store any of your data. All calculations are done in your browser, and the results are not sent to any server.",
+      "loading": "Calculating...",
+      "basis": {
+        "hourly": "Hourly",
+        "daily": "Daily",
+        "monthly": "Monthly",
+        "yearly": "Yearly"
+      },
+      "fields": {
+        "takeHomeHourly": "Your take-home pay (per hour, net)",
+        "workHoursDay": "Work hours / day",
+        "takeHomeDaily": "Your take-home pay (per day, net)",
+        "workingDaysMonth": "Working days / month",
+        "takeHomePeriod": "Your take-home pay (per {{period}}, net)",
+        "periodMonth": "month",
+        "periodYear": "year"
+      },
+      "errors": {
+        "price": "Please enter a valid price",
+        "workHours": "Please enter valid work hours per day",
+        "takeHome": "Please enter a valid take-home pay amount",
+        "workingDays": "Please enter valid working days per month"
+      }
+    },
+    "units": {
+      "hour_one": "hour",
+      "hour_other": "hours",
+      "day_one": "day",
+      "day_other": "days",
+      "month_one": "month",
+      "month_other": "months",
+      "year_one": "year",
+      "year_other": "years"
+    },
+    "results": {
+      "eyebrow": "Conscious evaluation",
+      "title": "This costs you <em>{{hours}} hours</em> of your life.",
+      "daysLabor": "Days of labor",
+      "weeksEffort": "Weeks of effort",
+      "affordability": "Affordability",
+      "affordabilityLevels": {
+        "veryHigh": "Very high",
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low",
+        "veryLow": "Very low"
+      },
+      "waitPeriod": {
+        "days30": "Wait 30 days before buying.",
+        "hours24": "Wait 24 hours before buying."
+      },
+      "messages": {
+        "small": [
+          "This is a small amount of work. If you really want or need it, go for it. Just keep an eye on how often these little buys happen.",
+          "This one is not a big deal by itself. The only question is whether it is useful, enjoyable, or just something to click on.",
+          "A few hours is a fair trade for some things. If it will actually make your day better, that matters too.",
+          "This sits in small-treat territory. Worth it if it feels chosen, less worth it if it feels automatic."
+        ],
+        "day": [
+          "That's less than a work day. According to the Rule of 30, if you can wait 30 days and still want it, then it's probably worth it. If not, you just saved yourself a day of work.",
+          "This costs less than one work day. That is easy to justify, so it is also easy to stop thinking about it too soon.",
+          "You are trading part of a work day for this. If you would still choose it tomorrow, it may be fine.",
+          "This is not huge, but it is not nothing. Waiting one day can tell you a lot."
+        ],
+        "days": [
+          "That's nearly {{days}} full work days. Worth pausing before you give that much time to one purchase.",
+          "That's about {{days}} work days. Imagine finishing those days and choosing this with the money in your hand.",
+          "This is roughly {{days}} days of labor. Make sure you are buying something you will still care about later.",
+          "You are close to trading {{days}} full work days for this. It deserves a real yes, not a quick one."
+        ],
+        "weeks": [
+          "That's around {{weeks}} work weeks of your life. Consider waiting at least 30 days before making this purchase.",
+          "This is about {{weeks}} work weeks. Let it sit for a while and see if you still feel the same.",
+          "You are looking at roughly {{weeks}} weeks of work. That is enough time to deserve a slower decision.",
+          "That is close to {{weeks}} work weeks. Ask what else this money could quietly do for you."
+        ],
+        "largeWeeks": [
+          "That's around {{weeks}} weeks of work. This is no longer a casual purchase.",
+          "This represents about {{weeks}} work weeks. Treat it like a decision, not just a checkout.",
+          "You are weighing roughly {{weeks}} weeks of effort. Sleep on it and check the numbers again.",
+          "That is around {{weeks}} weeks of earned time. Be honest about how often you will really use it."
+        ],
+        "months": [
+          "That's months of work. Consider whether this purchase truly aligns with your values, stability, and long-term goals.",
+          "This is a major amount of work. Put it next to rent, savings, health, family, and the boring things that keep life steady.",
+          "At this scale, the question is not only whether you can pay for it. It is whether you want to work this long for it.",
+          "This is big enough to wait, compare options, and talk it through before deciding."
+        ]
+      },
+      "reflectionCards": {
+        "ruleOf30": {
+          "title": "The Rule of 30",
+          "description": "{{waitPeriodMessage}} If you still want it after that, the decision will be clearer."
+        },
+        "maintenance": {
+          "title": "Maintenance cost",
+          "description": "Will this need cleaning, fixing, charging, updates, refills, or extra accessories? Count that too."
+        },
+        "opportunity": {
+          "title": "Opportunity cost",
+          "description": "Those {{hours}} hours could also stay in your pocket for rest, travel, debt, savings, or a calmer month."
+        },
+        "storage": {
+          "title": "Storage cost",
+          "description": "Where will this live when you are not using it? If you do not know, that is part of the cost."
+        },
+        "replacement": {
+          "title": "Replacement test",
+          "description": "If you lost it six months from now, would you buy the same thing again right away?"
+        },
+        "usage": {
+          "title": "Usage forecast",
+          "description": "Name the next three times you would use it. If that is hard, the use case may be thin."
+        },
+        "future": {
+          "title": "Future you",
+          "description": "Next month, when the novelty is gone, will you be glad this money is not there?"
+        },
+        "borrow": {
+          "title": "Borrow first",
+          "description": "If this is for occasional use, borrowing, renting, or buying used might be enough."
+        },
+        "upgrade": {
+          "title": "Upgrade trap",
+          "description": "If you already own a working version, write down what actually improves. Be specific."
+        }
+      }
+    }
+  },
+  "reflections": {
+    "title": "Reflections",
+    "recommendedReads": "Recommended reads",
+    "quotes": [
+      {
+        "text": "Too many people spend money they have not earned, to buy things they do not want, to impress people they do not like.",
+        "author": "Will Rogers"
+      },
+      {
+        "text": "The things you own end up owning you.",
+        "author": "Chuck Palahniuk",
+        "source": "Fight Club"
+      },
+      {
+        "text": "Wealth is the ability to fully experience life.",
+        "author": "Henry David Thoreau"
+      },
+      {
+        "text": "Money often costs too much.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "text": "It is not the man who has too little, but the man who craves more, that is poor.",
+        "author": "Seneca"
+      },
+      {
+        "text": "Money is a terrible master but an excellent servant.",
+        "author": "P.T. Barnum"
+      },
+      {
+        "text": "It is the time you have wasted for your rose that makes your rose so important.",
+        "author": "Antoine de Saint-Exupery",
+        "source": "The Little Prince"
+      },
+      {
+        "text": "The price of anything is the amount of life you exchange for it.",
+        "author": "Henry David Thoreau"
+      },
+      {
+        "text": "He who buys what he does not need steals from himself.",
+        "author": "Swedish proverb"
+      },
+      {
+        "text": "The greatest wealth is to live content with little.",
+        "author": "Plato"
+      },
+      {
+        "text": "Beware the barrenness of a busy life.",
+        "author": "Socrates"
+      }
+    ],
+    "recommended": [
+      {
+        "title": "On the Shortness of Life",
+        "author": "Seneca"
+      },
+      {
+        "title": "The Myth of Sisyphus",
+        "author": "Albert Camus"
+      },
+      {
+        "title": "Meditations",
+        "author": "Marcus Aurelius"
+      },
+      {
+        "title": "The Burnout Society",
+        "author": "Byung-Chul Han"
+      },
+      {
+        "title": "The Scent of Time",
+        "author": "Byung-Chul Han"
+      },
+      {
+        "title": "Time Is More Valuable Than Money",
+        "author": "Jim Rohn"
+      }
+    ]
+  },
+  "history": {
+    "eyebrow": "Why was this tool born?",
+    "title": "A more conscious way to spend.",
+    "imageAlt": "Portrait of the creator",
+    "caption": "Personal note",
+    "originTitle": "Why was this tool born?",
+    "originP1": "We live in a hyper-connected society centered on productivity, where money seems to be the only resource that matters when building a life project. However, in that race for material things, we often leave behind the most precious asset we have: <strong>time</strong>.",
+    "originP2": "The money we earn at work is nothing more than <strong>time from our lives that we have traded</strong>. Time is a finite, unrecoverable resource and the true engine of everything.",
+    "originP3": "This is not about not spending what we earn, but about doing so responsibly. It is about being aware that, beyond possessions, the true luxury is the time we gain to enjoy our loved ones, a hobby, playing sports, resting, or simply taking care of our health and finding peace.",
+    "projectTitle": "A personal project",
+    "projectP1": "The goal of this tool is not to lecture anyone. I am certainly not the best person in the world at managing finances; in fact, <strong>that is exactly why I built this calculator</strong>: to learn how to value every single economic decision I make.",
+    "projectP2": "I love my job, and programming is also my passion. Because of this, I could not think of a better way to tackle this need than by combining my technical knowledge with this personal learning process.",
+    "projectP3": "In this 2026, I have decided to start a voluntary digital detox from the information overload that surrounds us. I have started eating healthier, working out, and leading a better lifestyle. The reason? <strong>I want to be more conscious of my lifetime and enjoy it the way I truly want to.</strong>",
+    "projectP4": "If you have read this far, thank you so much for giving me a few minutes of your most valuable resource.",
+    "projectP5": "I truly hope this tool is useful to you."
+  }
+}
